@@ -1,2 +1,3 @@
-# l33ts
-leetcode stuff
+# LeetCode Files
+
+A repository to store all my leetcode files
