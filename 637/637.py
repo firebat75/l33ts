@@ -4,11 +4,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def averageOfLevels(root) -> list[float]:
-    if not root.right and not root.left: #if node is a leaf
-        return [root.val]                #return node value
 
-    else:
-        if root.left:
-
-
+def averageOfLevels(root):
+    if not root.right and not root.left:  # if node is a leaf
+        return [root.val]  # return node value
