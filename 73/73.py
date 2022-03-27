@@ -18,7 +18,7 @@ def solution(matrix):
                 matrix[row][col] = 0
 
     print(rows, cols)
-    return matrix
+    # return matrix
 
 
 print(solution([[1, 1, 1], [1, 0, 1], [1, 1, 1]]))
