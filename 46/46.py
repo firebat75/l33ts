@@ -1,23 +1,19 @@
 def solution(nums):
-    def backtrack(temp=[], nums2=[]):
-        store = nums2.copy()
-        print(temp, store)
+    def permute(nums):
+        res = []
+        dfs(nums, [], res)
+        return res
 
-        if store == []:
-            output.append(temp)
-            print(f"output: {output}")
-            # store = nums.copy()
-            # temp = []
-        else:
-            for i in range(len(store)):
-                print(i, temp, store, output)
-                backtrack(temp + [store.pop(i)], store)
+    def dfs(nums, path, res):
+        if not nums:
+            res.append(path)
+            # return # backtracking
+        for i in range(len(nums)):
+            dfs(nums[:i] + nums[i + 1 :], path + [nums[i]], res)
 
-    output = []
-    backtrack([], nums)
-    return output
+    return permute(nums)
 
 
 print(solution([1, 2, 3]))
-# print(solution([0, 1]))
-# print(solution([1]))
+print(solution([0, 1]))
+print(solution([1]))
