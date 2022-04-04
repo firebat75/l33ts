@@ -7,28 +7,31 @@ def solution(n, k):
 
     output = []
 
-    def backtracking(k2, path, nums):
+    def backtracking(k2, path, nums, index):
         path.sort()
         print(k2, path, nums)
-        if not k2:
+
+        if k2 > len(nums) - index + 1:
+            pass
+
+        elif not k2:
             if path not in output:
                 output.append(path)
                 print("APPENDING-----------------")
 
         else:
             for i in range(len(nums)):
-                backtracking(k2 - 1, path + [nums[i]], nums[:i] + nums[i + 1 :])
+                backtracking(k2 - 1, path + [nums[i]], nums[:i] + nums[i + 1 :], i + 1)
 
-    backtracking(k, [], nums)
+    backtracking(k, [], nums, 0)
     print("==============================================")
     return output
 
 
-print(solution(1, 1))
+# print(solution(16, 12))
 print(solution(4, 2))
 print(solution(4, 3))
 print(solution(4, 4))
-
 print(solution(5, 3))
 
 q = ([6, 1], len(solution(6, 1)))
