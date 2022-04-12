@@ -1,18 +1,4 @@
 def solution(coins, amount):
-    # def backtracking(path):
-    #     if sum(path) == amount:
-    #         output.append(len(path))
-    #     elif sum(path) > amount:
-    #         pass
-    #     else:
-    #         for coin in coins:
-    #             backtracking(path + [coin])
-
-    # output = []
-    # backtracking([])
-    # if not output:
-    #     return -1
-    # return min(output)
     if amount == 0:
         return 0
     value1 = [0]
@@ -21,6 +7,8 @@ def solution(coins, amount):
     visited = [False] * (amount + 1)
     visited[0] = True
     while value1:
+        print(f"value1: {value1}")
+        print(f"value2: {value2}")
         nc += 1
         for v in value1:
             for coin in coins:
@@ -32,6 +20,7 @@ def solution(coins, amount):
                 elif not visited[newval]:
                     visited[newval] = True
                     value2.append(newval)
+                print(f"nc:{nc}-coin:{coin}-newval:{newval}-value2:{value2}")
         value1, value2 = value2, []
     return -1
 
@@ -39,4 +28,4 @@ def solution(coins, amount):
 print(solution([1, 2, 5], 11))
 print(solution([2], 3))
 print(solution([1], 0))
-print(solution([186, 419, 83, 408], 6249))
+# print(solution([186, 419, 83, 408], 6249))
