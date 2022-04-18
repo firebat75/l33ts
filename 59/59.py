@@ -33,6 +33,7 @@ def solution(n):
             rep += 1
             dir = "right"
 
+    print(DataFrame(grid))
     return grid
 
 
