@@ -12,7 +12,6 @@ def solution(root, k):
     def helper(root, k):
         nonlocal vals
         print(root.val, vals)
-        found = False
         if root.left:
             helper(root.left, k)
         vals.append(root.val)
