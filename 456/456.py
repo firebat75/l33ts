@@ -2,6 +2,19 @@ def solution(nums):
     if len(nums) < 3:
         return False
 
+    if max(nums) < min(nums) + 2:
+        return False
+
+    if len(set(nums)) < 3:
+        return False
+
+    temp = [nums[0]]
+    for item in nums:
+        if item != temp[-1]:
+            temp.append(item)
+
+    nums = temp
+
     for i in range(len(nums) - 1):
         for j in range(i + 1, len(nums)):
             for k in range(j + 1, len(nums)):
